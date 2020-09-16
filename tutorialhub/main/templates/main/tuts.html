@@ -1,0 +1,40 @@
+{% extends "main/base.html" %} {% load static %} {% block content%}
+
+<div class="album py-5 bg-light">
+  <div class="container text-center">
+    <h1>Download tutorials for {{subject.name}}</h1>
+    <div class="row">
+      {% if tutorials %} {% for tutorial in tutorials %}
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-md-8">
+              <img
+                src="https://source.unsplash.com/1000x1000/?nature,water"
+                class="card-img semImages"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-4">
+              <div class="card-body">
+                <h5 class="card-title">{{tutorial.name}}</h5>
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-lg btn-outline-primary">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %} {% else %}
+      <h3>No tutorials yet</h3>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

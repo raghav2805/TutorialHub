@@ -1,0 +1,87 @@
+{% extends "main/base.html" %} {% load static %} {% block content%}
+
+<div class="album py-5 bg-light">
+  <div class="container text-center">
+    <h1>Select your Branch</h1>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        
+                
+                 
+                
+        <div class="card mb-4 shadow-sm">
+          <img src="{% static 'assets/images/cse.jpg' %}" class="semImages" />
+          <div class="card-body">
+            <h5 class="card-title">Computer Science</h5>
+            <p class="card-text">
+              <strong>“Computers are good at following instructions, but not at reading your mind.”</strong>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a
+                  href="{% url 'subjects' sem=sem branch='cse' %}"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img src="{% static 'assets/images/ece.jpg' %}" class="semImages" />
+          <div class="card-body">
+            <h5 class="card-title">Electrical</h5>
+            <p class="card-text">
+              <strong>"No resistance can drop our potential"
+              "...This is not Just a Dot its the fuckin electron"</strong>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a
+                  href="{% url 'subjects' sem=sem branch='ece' %}"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img src="{% static 'assets/images/biotech.png' %}" class="semImages" />
+          <div class="card-body">
+            <h5 class="card-title">Biotech</h5>
+            <p class="card-text">
+              <strong>"Our world is built on biology and once we begin to understand it, it then becomes a technology” </strong>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a
+                  href="{% url 'subjects' sem=sem branch='biotech' %}"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

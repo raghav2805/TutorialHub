@@ -1,0 +1,41 @@
+{% extends "main/base.html" %} {% load static %} {% block content%}
+
+<div class="album py-5 bg-light">
+  <div class="container text-center">
+    <h1>Select Subject</h1>
+    <div class="row">
+      {% if subjects %} {% for subject in subjects %}
+
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <!-- <img src="{% static 'assets/images/1.jpg' %}" class="semImages" /> -->
+          <img src="{{subject.image.url}}" class="semImages" />
+          <div class="card-body">
+            <h5 class="card-title">{{subject.name}}</h5>
+            {{sem}} {{branch}}
+            <p class="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a
+                  class="btn btn-sm btn-outline-secondary"
+                  href="{% url 'tutorials' sem=sem branch=branch sub_id=subject.id%}"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <h3>No subjects yet</h3>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import home, branches, subjects, tutorials
+from .views import home, branches, subjects, tutorials, test
 
 urlpatterns = [
     path('', home, name='home'),
@@ -9,4 +9,5 @@ urlpatterns = [
          subjects, name='subjects'),
     path('semester/<int:sem>/branches/<str:branch>/subjects/<int:sub_id>/tutorials',
          tutorials, name='tutorials'),
+    path('test', test, name='test')
 ]

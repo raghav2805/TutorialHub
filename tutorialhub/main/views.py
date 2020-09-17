@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Subject, Tutorial
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -24,3 +25,7 @@ def tutorials(request,  sem, branch, sub_id):
     subject = get_object_or_404(Subject, id=sub_id)
     tutorials = Tutorial.objects.filter(subject=subject)
     return render(request, 'main/tuts.html', {'tutorials': tutorials, 'subject': subject})
+
+
+def test(request):
+    return HttpResponse("Heloo world")

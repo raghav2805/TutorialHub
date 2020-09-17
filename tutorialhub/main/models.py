@@ -15,6 +15,7 @@ class Subject(models.Model):
     image = models.ImageField(upload_to=upload_path_handler)
     semester = models.IntegerField(choices=semesters)
     branch = models.CharField(max_length=200, choices=branches)
+    description = models.TextField()
 
     def __str__(self):
         return self.name
